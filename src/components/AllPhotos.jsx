@@ -2,5 +2,9 @@ import React from "react";
 import _ from "lodash";
 
 export default function AllPhotos() {
-  return <div>ALL PHOTOS</div>;
+  return (
+    <div id="allPhotos" className="allPhotos container">
+      **ALL PHOTOS**
+    </div>
+  );
 }

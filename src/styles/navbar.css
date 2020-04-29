@@ -1,9 +1,9 @@
 .navbarContainer {
   padding: 1rem;
-  font-family: "Roboto", sans-serif;
+  font-family: Verdana, sans-serif;
   display: flex;
   justify-content: space-between;
-  background-color: #81a1c1; /* Nord Blue */
+  background: linear-gradient(to bottom, #5e81ac 5%, #81a1c1 100%);
 }
 
 /*

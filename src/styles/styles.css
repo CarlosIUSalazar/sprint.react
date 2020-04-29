@@ -1,10 +1,20 @@
 body {
   margin: 0;
-  background-color: #e5e9f0; /* Nord white 2 */
+  background-color: #eceff4; /* Nord white 2 */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.container {
+  display: flexbox;
+  justify-content: space-around;
+  align-content: space-around;
+  background-color: #d8dee9;
+  padding: 5px;
+}
+
+/*
 .navText {
-  color: blue;
+  color: #eceff4;
 }
 
 .imageCell {
@@ -19,3 +29,4 @@ body {
 .single-photo {
   width: 100%;
 }
+*/

@@ -10,7 +10,7 @@ import { listObjects, getSingleObject, saveObject } from "../utils/index";
 export default function App(props) {
   const [currentView, setCurrentView] = useState("AllPhotos");
   const [photo, setPhoto] = useState("");
-  const [selectedPhoto, setSelectedPhoto] = useStatus("");
+  const [selectedPhoto, setSelectedPhoto] = useState("");
 
   // useEffect call to get photos (only once [] ), (when the state change??)
   useEffect(() => {
@@ -18,10 +18,8 @@ export default function App(props) {
     getPhotos();
   }, []); /*<---- empty so it's only called once */
 
-  //a string that tells the component whether the user should be shown the AllPhotos or SinglePhoto view
-
-  // https://carlosiusalazar@github.com/CarlosIUSalazar/cc12-sprint.react.git
-  //https://makokusuda@github.com/makokusuda/cc12-sprint.react
+  //a string that tells the component whether the user should be shown the
+  // AllPhotos or SinglePhoto view
 
   //let imagesArray = [];
   let photoKey = [];
@@ -36,8 +34,8 @@ export default function App(props) {
     //return `data:image/jpg;base64,${arr}`;
     //return photoKey.push(`data:image/jpg;base64,${arr}`)
     //return photoKey
-    image3.src = `data:image/jpg;base64,${arr}`;
-    document.body.appendChild(image3);
+    //image3.src = `data:image/jpg;base64,${arr}`;
+    //document.body.appendChild(image3);
   }
 
   console.log("KEEYY!???!", photoKey); //undef
@@ -57,7 +55,7 @@ export default function App(props) {
   // image2.src = list();
   // document.body.appendChild(image2);
 
-  const selectedPhoto = []; // an image represented as a base-64 string
+  //const selectedPhoto = []; // an image represented as a base-64 string
 
   // function Testing({listPhotos}){
   //   return (
@@ -66,7 +64,8 @@ export default function App(props) {
   // }
 
   function updatePageType(pageType) {
-    setCurrentView(AllPhotos);
+    console.log("Hello");
+    setCurrentView("AllPhotos");
   }
 
   // ** We should have a component that will check the state of APP and then
@@ -77,14 +76,15 @@ export default function App(props) {
   return (
     <div className="app">
       {/*<img src={updateImg} className="image" alt="!! Mako nophoto :( !!"></img>*/}
-      <img src="logo192.png" alt="!!Carlo nophoto :( !!"></img>
+      <img src="logo192.png" alt="!!Carlos nophoto :( !!"></img>
       <h1> *** Its RENDERING - YAY! ***</h1>{" "}
       {/* TO BE REMOVED - DEBUGGING ONLY */}
       <p>----------------- ^^^ debug area ^^^ ------------------</p>{" "}
       {/* TO BE REMOVED - DEBUGGING ONLY */}
-      <NavBar updatePageType={updatePageType} />
-      <AllPhotos />
-      <SinglePhoto />
+      <NavBar onClick={() => this.updatePageType()} />
+      <div className="photo container">
+        {currentView === "SinglePhoto" ? <SinglePhoto /> : <AllPhotos />}
+      </div>
     </div>
   );
 }

@@ -4,8 +4,8 @@ import "../styles/button.css";
 
 export default function Upload() {
   return (
-    <button className="button file-upload" type="submit">
-      Upload type=submit
-    </button>
+    <a href="#" class="button home">
+      Upload
+    </a>
   );
 }
