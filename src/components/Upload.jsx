@@ -1,7 +1,11 @@
 import React from "react";
 import _ from "lodash";
-import "../styles/upload.css";
+import "../styles/button.css";
 
 export default function Upload() {
-  return <div className="file-upload" />;
+  return (
+    <button className="button file-upload" type="submit">
+      Upload type=submit
+    </button>
+  );
 }

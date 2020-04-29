@@ -4,6 +4,7 @@ const bucketName = "react.sprint";
 const identityPoolId = "ap-northeast-1:131db146-e5b9-4f7b-8b58-d0c59e2deeaf";
 
 // students: ap-northeast-1:131db146-e5b9-4f7b-8b58-d0c59e2deeaf
+
 AWS.config.update({
   region: "ap-northeast-1",
   credentials: new AWS.CognitoIdentityCredentials({
@@ -45,7 +46,7 @@ export function getSingleObject(key) {
           return;
         }
 
-        resolve(data.Body.toString("base64"));
+        resolve(data.Body.toString("base64")); //
       }
     );
   });
@@ -74,3 +75,5 @@ export function saveObject(file) {
 
   return saveObject;
 }
+
+module.export = { listObjects, getSingleObject, saveObject };

@@ -1,0 +1,31 @@
+.button {
+  cursor: pointer;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 9px 16px;
+  transition: all 20ms ease-out;
+}
+
+.home {
+  align-self: center;
+  background-color: #e5e9f0;
+}
+
+.upload {
+  align-self: center;
+  background-color: #e5e9f0;
+}
+/*
+input {
+  position: absolute;
+  left: -99999999px;
+}
+
+button {
+  height: 2rem;
+}
+*/
