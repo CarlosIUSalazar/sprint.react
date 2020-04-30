@@ -25,6 +25,13 @@
   color: #eceff4;
 }
 
+#upload_button {
+  display: inline-block;
+}
+#upload_button input[type="file"] {
+  display: none;
+}
+
 /*
 input {
   position: absolute;

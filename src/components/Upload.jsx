@@ -23,14 +23,19 @@ export default function Upload(props) {
   };
 
   return (
-    <>
-      <input
-        id="input"
-        className="button upload"
-        type="file"
-        name="file"
-        onChange={props.onChange}
-      />
-    </>
+    <div id="upload_button">
+      <label>
+        <input
+          type="file"
+          ngf-select="true"
+          ng-model="new_files"
+          ng-change="fs.uploadFiles(new_files)"
+          multiple
+        />
+        <span className="button upload" onChange={props.onChange}>
+          Upload
+        </span>
+      </label>
+    </div>
   );
 }

@@ -8,8 +8,8 @@ export default function Navbar(props) {
   return (
     <>
       <div className="navbarContainer">
-        <Home />
-        <Upload onChange={props.onChange} />
+        <Home props={props.updatePageType} />
+        <Upload /> {/*onChange={props.onChange}*/}
       </div>
     </>
   );

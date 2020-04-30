@@ -8,14 +8,14 @@ import Upload from "./Upload";
 
 import { listObjects, getSingleObject, saveObject } from "../utils/index";
 
-//-----------------------------vv The App() vv-------------------------------//
-export default function App(props) {
+//==============================vv The App() vv===============================//
+export default function App() {
   const [currentView, setCurrentView] = useState("SinglePhoto");
   const [photos, setPhotos] = useState(null);
   const [selectedPhoto, setSelectedPhoto] = useState("");
-  //----------------------- ^^ The different states ^^ ------------------------//
+  //------------------------ ^^ The different states ^^ ------------------------//
 
-  async function getPhotos() {
+  async function getPhotos(props) {
     const listOfPromiseObjs = await listObjects();
     const arrayOfPromises = listOfPromiseObjs.map(el => el.Key);
     const arrayOfBase64Strings = await Promise.all(
@@ -26,16 +26,7 @@ export default function App(props) {
     );
     setPhotos(result);
   }
-  /*
-    function getPhotos() {
-      let result = [];
-      return (promise listObjects()
-      .then(listOfPromiseObjs => listOfPromiseObjs.map(el => el.Key)
-      .then(arrayOfPromises => Promise.all(arrayOfPromises.map(item => getSingleObject(item)));
-      .then(arrayOfBase64Strings => result.push(arrayOfBase64Strings.map(el => "data:image/jpg;base64," + el));
-      setPhotos(result));
-    }
-  */
+
   useEffect(() => {
     getPhotos();
   }, []);
@@ -53,14 +44,14 @@ export default function App(props) {
       tenPhotos.push(photos[i]);
     }
     return tenPhotos.map((value, index) => {
-      return <img src={value} height="100" width="200"></img>;
+      return <img src={value} height="100" width="200" alt="🙈🙉🙊"></img>;
     });
   };
 
   // function that is being passed to a child as a 'prop' for it to call (event?)
-  const updatePageType = pageType => {
-    console.log("-------->Hello------>", pageType); // <-- not logging
-    setCurrentView(pageType);
+  const updatePageType = () => {
+    console.log("-------->Hello------>"); // <-- not logging
+    setCurrentView("AllPhotos");
   };
 
   //------------------ vv gets rendered to the HTML page vv --------------------//
@@ -69,11 +60,9 @@ export default function App(props) {
       <h1> *** Its RENDERING - YAY! ***</h1>{" "}
       {/* TO BE REMOVED - DEBUGGING ONLY */}
       <p>----------------- ^^^ debug area ^^^ ------------------</p>{" "}
-      <NavBar
-        onChange={e => {
-          setSelectedPhoto(e.target.files[0]);
-        }}
-      />
+      <NavBar props={updatePageType} />{" "}
+      {/*onChange={
+        e => {setSelectedPhoto(e.target.files[0])}}}*/}
       <div className="photo container">
         {currentView === "SinglePhoto" ? <SinglePhoto /> : <AllPhotos />}
         {/*<div>{displayPhoto()}</div> {/*<--- need to display in single
@@ -137,3 +126,14 @@ export default function App(props) {
 //       <img src={listPhotos}/>
 //     );
 //   }
+
+/*
+    function getPhotos() {
+      let result = [];
+      return (promise listObjects()
+      .then(listOfPromiseObjs => listOfPromiseObjs.map(el => el.Key)
+      .then(arrayOfPromises => Promise.all(arrayOfPromises.map(item => getSingleObject(item)));
+      .then(arrayOfBase64Strings => result.push(arrayOfBase64Strings.map(el => "data:image/jpg;base64," + el));
+      setPhotos(result));
+    }
+  */
