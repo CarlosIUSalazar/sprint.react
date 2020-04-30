@@ -49,10 +49,10 @@ export default function App() {
   };
 
   // function that is being passed to a child as a 'prop' for it to call (event?)
-  const updatePageType = () => {
+  function updatePageType() {
     console.log("-------->Hello------>"); // <-- not logging
     setCurrentView("AllPhotos");
-  };
+  }
 
   //------------------ vv gets rendered to the HTML page vv --------------------//
   return (
@@ -60,7 +60,7 @@ export default function App() {
       <h1> *** Its RENDERING - YAY! ***</h1>{" "}
       {/* TO BE REMOVED - DEBUGGING ONLY */}
       <p>----------------- ^^^ debug area ^^^ ------------------</p>{" "}
-      <NavBar props={updatePageType} />{" "}
+      <NavBar updatePageType={updatePageType} />{" "}
       {/*onChange={
         e => {setSelectedPhoto(e.target.files[0])}}}*/}
       <div className="photo container">
