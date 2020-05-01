@@ -4,12 +4,12 @@ import _ from "lodash";
 import Upload from "./Upload";
 import Home from "./Home";
 
-export default function Navbar({ updatePageType }) {
+export default function Navbar({ updatePageType, uploadPhoto }) {
   return (
     <>
       <div className="navbarContainer">
         <Home updatePageType={updatePageType} />
-        <Upload /> {/*onChange={props.onChange}*/}
+        <Upload uploadPhoto={uploadPhoto} />
       </div>
     </>
   );

@@ -1,10 +1,13 @@
 import React from "react";
-import _ from "lodash";
 
-export default function SinglePhoto() {
+export default function SinglePhoto({ singleImage }) {
+  console.log("SinglePhoto", singleImage);
   return (
-    <div className="singlePhoto" id="singlePhoto">
-      -- Single Photo --
-    </div>
+    <img
+      className={"singlePhoto"}
+      src={singleImage}
+      id="singlePhoto"
+      alt="🤯🤯🤯"
+    ></img>
   );
 }

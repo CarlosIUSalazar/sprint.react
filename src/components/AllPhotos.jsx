@@ -1,10 +1,10 @@
 import React from "react";
 import _ from "lodash";
 
-export default function AllPhotos() {
+export default function AllPhotos({ displayPhotos }) {
   return (
     <div id="allPhotos" className="allPhotos container">
-      **ALL PHOTOS**
+      <div>{displayPhotos()}</div>
     </div>
   );
 }
