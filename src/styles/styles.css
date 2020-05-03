@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  background-color: #e5e9f0; /* Nord white 2 */
 }
 
 .navText {
@@ -18,4 +17,11 @@ body {
 
 .single-photo {
   width: 100%;
+}
+
+.singleImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }

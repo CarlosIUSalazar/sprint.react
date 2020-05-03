@@ -1,10 +1,17 @@
 import React from "react";
-import _ from "lodash";
 
-export default function SinglePhoto() {
+export default function SinglePhoto(props) {
   return (
     <div>
-      <h2>Single Photo</h2>
+      <img
+        className="singleImage"
+        src={props.chosen}
+        onClick={() => {
+          props.switchToAllPhotoView();
+        }}
+        width="600"
+        height="400"
+      />
     </div>
   );
 }

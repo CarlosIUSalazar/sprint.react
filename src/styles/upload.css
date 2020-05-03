@@ -1,13 +1,5 @@
-.navbar {
-  padding: 2rem;
-  display: flex;
-  justify-content: flex-end;
-  background-color: #1c7e88;
-}
-
-.homeLink {
-  position: absolute;
-  left: 50px;
+.button {
+  cursor: pointer;
 
   box-shadow: 0px 10px 14px -7px #276873;
   background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
@@ -24,19 +16,20 @@
   text-shadow: 0px 1px 0px #3d768a;
 }
 
-.Title {
-  margin: 0 auto;
-  color: white;
+/* .button:hover {
+	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	background-color:#408c99;
+}
+.button:active {
+	position:relative;
+	top:1px;
+} */
+
+input {
+  position: absolute;
+  left: -99999999px;
 }
 
-.navbar-header {
-  cursor: pointer;
-  margin-right: auto;
-}
-
-/*
-.navbar-header {
-  cursor: pointer;
-  margin-right: auto;
-}
-*/
+/* button {
+  height: 2rem;
+} */
