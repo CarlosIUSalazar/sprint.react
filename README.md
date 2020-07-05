@@ -1,67 +1,66 @@
-# React スプリント
-### This was created during my time as a [Code Chrysalis](https://codechrysalis.io) Student
+# React Sprint
 
-## 目次
+## Table of Contents
 
-1.  [はじめに](#introduction)
-2.  [達成目標](#objectives)
-3.  [トピックの概要](#overview-of-topics)
-4.  [環境設定](#environment)
-5.  [課題](#requirements)
-6.  [依存パッケージのインストール](#installing-dependencies)
-7.  [課題と手順について](#objectives-and-instructions)
-8.  [基本レベル](#basic-requirements)
-9.  [応用レベル](#advanced)
-10. [参考資料](#resources)
-11. [コントリビューション](#contributing)
+1.  [Introduction](#introduction)
+1.  [Objectives](#objectives)
+1.  [Overview of Topics](#overview-of-topics)
+1.  [Environment](#environment)
+1.  [Requirements](#requirements)
+1.  [Installing Dependencies](#installing-dependencies)
+1.  [Requirements & Instructions](#objectives-and-instructions)
+1.  [Basic Requirements](#basic-requirements)
+1.  [Advanced Requirements](#advanced)
+1.  [Resources](#resources)
+1.  [Contributing](#contributing)
 
-## イントロダクション
+## Introduction
 
-最も人気のあるフロントエンドテクノロジーの 1 つである React の世界に飛び込んで、モジュール式のコンポーネント指向によるアプリの構築を行っていきます。この課題を通して、写真アップロードアプリを作成することで、コンポーネントのライフサイクル、ローカルでの状態（state）、プロップ（props）などについて学ぶことができます。
+Dive into React, one of the most popular front-end technologies and build modular, component-driven apps. As you build a photo-upload app, you will learn about the component lifecycle, its local state, the props passed to it, and much more.
 
-## 到達目標
+## Objectives
 
-この課題を通して、次のことを学びます：
+In this task students will:
 
-- 実際のアプリケーションで JSX 構文を使用する。
-- 親コンポーネントと子コンポーネントが機能合成（functional composition）にどのように関連するのか説明する。
-- 親コンポーネントから子コンポーネントに状態（state）をプロップ（props）として渡す。
-- プロップ（props）を使用して、親から子にコールバックを渡す（onclick、onadd など）。
-- useState および useEffect の具体的な使い方について慣れる。
+- Use JSX syntax in a real application
+- Explain how parent and child components relate to functional composition
+- Transfer state from parent components as props to children
+- Use props to pass callbacks from parents to children (e.g. onclick, onadd, etc)
+- Get used to the fine details of useState and useEffect
 
-## トピックの概要
+## Overview of Topics
 
-React は非常に巨大で人気のあるエコシステムです。React と連携する多くの異なるライブラリがありますが、最も重要な点は、React の**エコシステムを一連のビルディングブロックのように扱うことができる**ということです。一度にすべてを学ぼうとせずに、React の基礎を習得するために時間をかけましょう。Redux などの Flux ライブラリや React Router などのルーティングシステムなど、React をサポートする他のライブラリを導入するタイミングで、他のライブラリを学習するようにしましょう。
+React is a very large and popular ecosystem. While there are lots of different libraries that go hand-in-hand with it, the most important thing about it is that **you get to treat the ecosystem like a series building blocks**. Rather than learning everything at once, take the time to master the fundamentals of React. You will know when it is time to introduce other libraries that support React, like a Flux library such as Redux or a routing system such as React Router
 
 > ### React.js
 >
-> [React](https://ja.reactjs.org/) は、Facebook が開発した JavaScript ライブラリです。 *ユーザーインターフェイスを構築するためのライブラリ*として位置づけられています。 React は Web 開発の世界で非常に人気があり、今日、多くの著名な企業が React をプロダクトの開発に利用しています。
+> [React](https://facebook.github.io/react/) is a JavaScript library created at Facebook. It's presented as _a library for building user interfaces_. React is incredibly popular in the web development world, with many prominent companies using it in production today.
 
-React について知っておくべきいくつかの概念があります：
+There are some concepts you should know about React:
 
-> #### React は宣言的（Declarative）
+> #### React is Declarative
 >
-> React では、XML に似たコードを JavaScript のコード内に直接記述できる、**JSX** と呼ばれる JavaScript の拡張構文を使用します。JSX は、仮想 DOM（Virtual DOM）にマウントされます。仮想 DOM とは、UI の更新を高速化するために、DOM の更新を抽象化したものです。このマークアップ言語は、ページ上で HTML がレンダリングされるのと同じ方法で記述することができるため、デバッグを高速化し、コードを推測できるようにします。
+> With React, you explicitly write out XML-like code called **JSX**, which is then mounted on the Virtual DOM, an abstraction on top of the DOM which makes for faster visual changes. Because you write this markup language the same way you would expect HTML to be rendered on a page, it helps you debug faster and makes your code predictable.
 
-> #### React はコンポーネント（Component）ベース
+> #### React is Component Based
 >
-> 自身のデータをカプセル化し、相互にネストするコンポーネントを構築することで、複雑なユーザーインターフェイスを構築し、必要に応じてデータを共有します。
+> Build components that encapsulate their own data and nest them within each other to construct complex user interfaces, sharing data between them as necessary.
 
-> #### Learn Once, Write Anywhere（一度学べば、どのプラットフォームでも書ける）
+> #### Learn Once, Write Anywhere
 >
-> React ライブラリは、React Native（モバイル開発用）や React VR（仮想現実デバイス用）などのフレームワークの動力源となります。React での考え方と書き方を一度学べば、それを複数のプラットフォームに持ち込むことができます。
+> The React library powers frameworks such as React Native (for mobile development) and React VR (for virtual reality devices). Once you learn how to think and write in React, you can take that with you to multiple platforms.
 
-このスプリントで取り上げる React のトピックを以下に示します：
+These are the topics on React that we will cover in this sprint:
 
-> #### JSX および class vs className
+> #### JSX and Class vs className
 >
-> JSX は JavaScript の構文上の拡張機能であり、React で UI を作成するために使用することが推奨されています。
+> JSX is a syntactical extension to JavaScript and is the recommended way to write your UIs in React.
 
-トップレベルでは、コンポーネントは XML に非常によく似ており、JSX は HTML 要素も受け入れていることに気づくでしょう。
+At a top level, it looks very much like XML and you will find that JSX also accepts HTML elements.
 
-ただし、JSX と HTML には 1 つの大きな違いがあります：クラスの宣言方法です。
+However, there is one major difference between JSX and HTML: How you declare classes.
 
-HTML では、要素に次のようにクラスを指定します：
+In HTML, you would give an element a class like this:
 
 ```
   <div class="column">
@@ -69,7 +68,7 @@ HTML では、要素に次のようにクラスを指定します：
   </div>
 ```
 
-一方で、JavaScript の拡張である JSX では、React は `キャメルケース` 命名規則を利用しており、通常、`class` を使用する代わりに `className` を使用します：
+With JSX being an extension of JavaScript, React uses `camelCase` naming conventions and you will use `className` where you would normally use `class`:
 
 ```
   <div className="column">
@@ -77,15 +76,15 @@ HTML では、要素に次のようにクラスを指定します：
   </div>
 ```
 
-[JSX に関する Facebook の ドキュメント](https://ja.reactjs.org/docs/introducing-jsx.html)は非常に詳細であるため、一度は目を通しておきましょう。
+[Facebook's documentation on JSX](https://facebook.github.io/react/docs/introducing-jsx.html) is quite detailed and I recommend you check it out.
 
-> #### 状態（state）とプロップ（props）
+> #### State vs Props
 >
-> React には、**状態（state）** と **プロップ（Props）** の 2 種類のモデルデータがあります。
+> There are two different kinds of model data in React: **State** and **Props**.
 
-**状態（state）** は、特定のコンポーネント内に保持されるデータです。そのコンポーネントのメソッドと要素は、状態（state）に格納されているデータとやり取りし、必要に応じてデータの内容を変更できます。
+**State** is data that is retained within a specific component. The methods and elements of that component interact with data stored in its State, allowing you to modify its contents whenever necessary.
 
-一方で、**プロップ（Props）** は、対象コンポーネントの親コンポーネントから与えられるデータです。親コンポーネントが子コンポーネントにデータを受け渡す方法が主です。任意のタイプのデータを子コンポーネントに渡すには、JSX でその子コンポーネントをレンダリングするときに、単にプロップ（props）としてデータを追加するだけです。
+**Props**, on the other hand, is data that is given to a component by its parent. It is the primary way for a parent component to pass data down to its child. To pass any type of data to a child component, simply add it as a prop when rendering that child component in your JSX:
 
 ```
   <MyComponent
@@ -94,47 +93,47 @@ HTML では、要素に次のようにクラスを指定します：
   />
 ```
 
-上記では、**MyComponent** という名前のコンポーネントに、2 つのプロップ（props）へのアクセスを追加しています：`greeting` という文字列と `onClick` という匿名関数です。
+Above, I am giving a component titled **MyComponent** access to two props: A string called `greeting` and an anonymous function called `onClick`.
 
-[状態（state）とライフサイクルに関するドキュメント](https://ja.reactjs.org/docs/state-and-lifecycle.html)でも、状態（state）とプロップ（props）について言及しているので、一度は目を通しておきましょう。
+[This documentation on State and Lifecycle](https://facebook.github.io/react/docs/state-and-lifecycle.html) also goes through State and Props.
 
 > #### Refs
 >
-> 通常、**プロップ（Props）** を使用して、React アプリのデータハンドリングを行います。ただし、通常のプロセス以外でコンポーネントとやり取りする必要が出てくる場合があります。
+> Normally, you interact with the handling of data in your React apps through **Props**. However, there are certain circumstances in which you may need to interact with a component outside of the normal process.
 
-[Refs に関する React のドキュメント](https://ja.reactjs.org/docs/refs-and-the-dom.html)は、React アプリにおける Ref の扱い方に関するベストプラクティスを学ぶための優れた資料です。
+The [React documentation on Refs](https://facebook.github.io/react/docs/refs-and-the-dom.html) is a great way to learn best practices on how to handle the use of Refs in your apps.
 
-## 環境設定
+## Environment
 
-### 依存パッケージのインストールとセットアップ
+### Installing Dependencies and Starting Up
 
-まず、このプロジェクトの依存パッケージをインストールしましょう。
+First, install the dependencies for this project:
 
 ```shell
   $ yarn install
 ```
 
-ホットリロードを使用して開発モードでアプリを実行するには：
+To run the app in development mode with hot-reloading:
 
 ```shell
   $ yarn dev
 ```
 
-プロダクションビルドを作成し、静的サーバーを使用して起動するには：
+To create a production build and serve them up using a static server
 
 ```shell
   $ yarn prod
 ```
 
-## 課題と手順について
+## Requirements and Instructions
 
-### 基本レベル
+### Basic Requirements
 
-React を使用して写真アップロードアプリを構築するために、[React ドキュメント](https://ja.reactjs.org/docs/hello-world.html)を利用しましょう。最終的には、App、Navbar、Upload、AllPhotos、SinglePhoto の 5 つのコンポーネントを作成することになります。
+Use the [React docs](https://facebook.github.io/react/docs/hello-world.html) to build your photo upload app using React. You will end up with five components: App, Navbar, Upload, AllPhotos, and SinglePhoto.
 
-まず最初に慣れる必要があるのは、[React での考え方](https://ja.reactjs.org/docs/thinking-in-react.html)です。これらの 5 つのコンポーネントは、一部が他のコンポーネントにネストされるように構成されており、1 つのメインコンポーネントが最終的に実際の DOM としてレンダリングされます。
+The first thing you should be comfortable with is [how to think in React](https://facebook.github.io/react/docs/thinking-in-react.html). These five components will be structured where some will be nested within others, with one main component being ultimately rendered into the DOM.
 
-コンポーネント階層は次のようになります。
+Your component hierarchy will end up resembling the following:
 
 ```
   App
@@ -145,85 +144,87 @@ React を使用して写真アップロードアプリを構築するために�
 
 #### App
 
-このコンポーネントは、React アプリのメインエントリポイントです。
+This component is the main entry point for your React app.
 
-次の 3 つの項目で構成される状態（state）を保持しています。
+It maintains its own state, which consists of three items:
 
-- [ ] `currentView`、ユーザーに AllPhotos ビュー、もしくは SinglePhoto ビューのどちらを表示するかコンポーネントに伝える文字列。
-- [ ] `photos`、base-64 文字列として表現される画像の配列。
-- [ ] `selectedPhoto`、base-64 文字列として表現される画像。
+- [ ] `currentView`, a string that tells the component whether the user should be shown the AllPhotos or SinglePhoto view
+- [ ] `photos`, an array of images represented as base-64 strings
+- [ ] `selectedPhoto`, an image represented as a base-64 string
 
-また、他のすべてのコンポーネントのレンダリングも担当します：
+It is also responsible for rendering all of the other components:
 
-- [ ] **Navbar** は、ユーザーのためのナビゲーションバーをレンダリングします。 Navbar はビューに関係なく常に表示され、レンダリングされるべきではありません。
-- [ ] **AllPhotos** もしくは **SinglePhoto** では、全写真の一覧、拡大バージョンの 1 枚の写真をそれぞれレンダリングします。このレンダリングは条件付きであり、**App** コンポーネントの状態（state）の `currentView` プロパティに応じて行われます。
+- [ ] **Navbar**, which renders the navigation bar for the user. The Navbar is always shown regardless of view and should not be rendered
+- [ ] Either **AllPhotos** or **SinglePhoto**, which renders either a grid of all photos or an enlarged version of just one single photo. This render is conditional, based on the `currentView` property of the **App** component's state
 
-**App** はデフォルトで **AllPhotos** コンポーネントを表示する必要があります。
+**App** should default to showing the **AllPhotos** component.
 
-**App** コンポーネントがマウントされると、次のことが起こります：
+When **App** component mounts, the following should happen:
 
-- [ ] **utils/index.js** ファイルにあるユーティリティメソッドを使用して、Amazon の S3 サービスを呼び出し、事前に指定された S3 バケットに保存されているすべてのアイテムのリストを取得する必要があります。
-- [ ] 次に、そのアイテムのリストから各画像を取得し、コンポーネントの状態（state）の `photos` プロパティに配列として保存する必要があります。
+- [ ] It should use the utility methods found in the **utils/index.js** file to make a call to Amazon's S3 service to retrieve a list of all items stored on the pre-specified S3 bucket
+- [ ] Then, it should grab each image from that list of items and store it into the `photos` array in the component's state
 
-`photos` の配列が更新されるたびに、このコンポーネントの **render** メソッドを呼び出す必要はありません。-- React はコンポーネントの**状態（state）** と **プロップ（props）** の変更を検出し、視覚的な違いを引き起こす変更が検出された場合、**render** メソッドを React 自身がトリガーします。
+No need to worry about calling the **render** method of this component whenever the `photos` array is updated -- React will detect changes in a component's **state** and **props**, then trigger the **render** method on its own if a change that would cause a visual difference has been detected.
 
 #### Navbar
 
-このコンポーネントは、React アプリのナビゲーションバーとして機能する必要があります。 Upload コンポーネントとともにタイトルをレンダリングする必要があります。
+This component should serve as your navigation bar for your React app. It should render a title along with the Upload component.
 
-- [ ] タイトルはクリックできる必要があり、クリックすると **App** コンポーネントの状態（state）の `currentView` 文字列の値が `'AllPhotos'` に変更される必要があります。これは、AllPhotos ビューの表示に戻るナビゲーションをユーザーに提供するためです。このインタラクションを扱う方法については、[コンポーネントと props](https://ja.reactjs.org/docs/components-and-props.html) の React のドキュメントをご覧ください。
-- [ ] Upload コンポーネントをレンダリングし、プロップ（props）としてこのコンポーネントにコールバック関数を渡す必要があります。このコールバック関数は、ファイルを引数として渡すことを想定しており、**utils/index.js** にあるユーティリティメソッドの 1 つを使用してそのファイルを S3 に保存する必要があります。結果として、**App** コンポーネントの状態（state）に保存された写真の配列も更新する必要があります。
+- [ ] The title should be a clickable element that, when clicked, will modify the value of the `currentView` string in the **App** component's state, changing it to `'AllPhotos'`. This is to provide the user with a method of navigating back to seeing the AllPhotos view. You should check out the React documentation on [Props](https://facebook.github.io/react/docs/components-and-props.html) on how to handle this interaction.
+- [ ] It should render the Upload component and pass it a callback function as a prop. This callback should expect a file to be sent as an argument and is responsible for saving that file to S3 using one of the utility methods found in **utils/index.js** to do so. As a result of this, it should also update the photos array saved in the state of the **App** component.
 
 #### Upload
 
-- [ ] Upload コンポーネントは、画像をアップロードする目的で `button` 要素をレンダリングする必要があります。
-- [ ] `input` 要素を使って、ユーザーが画像ファイルを選択できるようにしましょう。
-- [ ] 画像ファイルが `input` 要素で選択された場合、React のプロップ（Props）を再び使用して、最終的にファイルを Navbar コンポーネントに渡す必要があります。
-- [ ] コンポーネントの `button` 要素を使用して、非表示の `input` 要素を使ってクリックイベントをトリガーしましょう。これを実現する方法については、[Refs](https://ja.reactjs.org/docs/refs-and-the-dom.html) の React ドキュメントを参照してください。
+- [ ] The Upload component renders a `button` element for the purposes of uploading an image
+- [ ] The `input` element should allow users to select a an image file
+- [ ] When an image file has been selected with the `input` element, it should ultimately send the file up to the Navbar component, again making use of React Props
+- [ ] You should use the `button` element in the component to trigger a click event on the invisible `input` element. Check out the React documentation on [Refs](https://facebook.github.io/react/docs/refs-and-the-dom.html) for a look at how to accomplish this
 
 #### AllPhotos
 
-- [ ] プロップ（prop）として渡された base64 エンコード文字列の配列から画像一覧をレンダリングしましょう。
-- [ ] 画像が画面全体を占めることがないようにしてください！画像をグリット状に並べるために、画像が適切なサイズに調節されるようにしてください。
-- [ ] 画像の文字列の配列は、親 **App** コンポーネントによってプロップ（prop）として渡される必要があります。
-- [ ] 各画像はクリックできるようにしなければならず、クリックされた画像のインデックスを **App** コンポーネントに渡す関数を実行する必要があります。
+- [ ] It should render a grid of images based on an array of base64-encoded strings given to it as a prop
+- [ ] The images should not take up the entire screen! Make sure their dimensions allow for a decently-sized grid of images
+- [ ] This array of strings should be delivered as a prop by the parent **App** component
+- [ ] Each image should be clickable, executing a function that will send the clicked image's index back up to the **App** component
 
-この時点で、**App** コンポーネントを次のように変更する必要があります：
+At this point, the **App** component should be modified so that:
 
-- [ ] **AllPhotos** コンポーネントのレンダリングには、コンポーネントの状態（state）の `selectedPhoto` プロパティに、画像一覧から選択された写真の base64 エンコード文字列をセットするためのコールバック関数を加える必要があります。
-- [ ] 同時に、**AllPhotos** コンポーネントの代わりに、**SinglePhoto** コンポーネントを表示するために、**App** コンポーネントのレンダリングを切り替える必要があります。
+- [ ] Its render of the **AllPhotos** component contains a callback that will set the `selectedPhoto` property of its state to equal the base64-encoded string of the selected photo from the grid
+- [ ] At that same time, it should switch the rendering of the **App** component so that it shows the **SinglePhoto** component instead of the **AllPhotos** component
 
 #### SinglePhoto
 
-- [ ] 画面全体を占める単一の画像をレンダリングする必要があります！
-- [ ] レンダリングする画像は、**App** コンポーネントからプロップ（prop）として渡す必要があります。
-- [ ] このコンポーネントは単一の画像のレンダリングするだけなので、自身の状態（state）やライフサイクルメソッドを加えるべきではありません。
+- [ ] It should render a single image that takes up the entire screen!
+- [ ] The image it renders should be passed into it as a prop from the **App** component
+- [ ] This component should not contain its own state nor any lifecycle methods, as it is just responsible for rendering one single image.
 
-#### ワイヤーフレーム
+#### Wireframes
 
-- すべての写真：
+- All Photos:
 
 ![All Photos](./img/multi_view.png)
 
-- 単一の写真：
+- Single Photo:
 
 ![Single Photo](./img/single_view.png)
 
-### 応用レベル
+### Advanced Requirements
 
-- [ ] 更新されるたびに、S3 を呼び出さないようにアプリを最適化しましょう。更新されるたびにアプリ内で写真の配列をブラウザストレージに保存し、アプリの読み込み時の始めに呼び出しましょう。
-- [ ] 上記の機能のために、すべての写真を取得するための更新ボタンを追加しましょう。
-- [ ] 写真のアップロード中にプログレスバーまたはビジュアルオーバーレイ（ローディング画像など）を追加し、アップロードが完了したら非表示にしましょう。
-- [ ] [React Hooks](https://ja.reactjs.org/docs/hooks-intro.html) のドキュメントを読んで、React Hooks を使用してアプリをリファクタリングしましょう。
-- [ ] 追加の機能を追加し、このアプリをあなただけのものにしましょう。制限はありません。
+- [ ] Let's optimize the app so that it does not make a call to S3 upon every refresh. Have your app save the photos array to browser storage whenever it is updated, and call from it first when the app loads
+- [ ] Add a refresh button to get all photos because of the above feature
+- [ ] Add a progress bar or visual overlay while a photo is being uploaded, and make it disappear once the upload is complete
+- [ ] Read into and refactor your app to use [React Hooks](https://reactjs.org/docs/hooks-intro.html)
+- [ ] Add additional functionality, make this app yours, the sky is the limit.
 
-## 参考資料
+## Resources
 
-- [React ドキュメント](https://ja.reactjs.org/)
-  - [コンポーネントと props](https://ja.reactjs.org/docs/components-and-props.html)
-  - [Ref と DOM](https://ja.reactjs.org/docs/refs-and-the-dom.html)
-- [ステートレスな関数コンポーネント](https://hackernoon.com/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc)
+- [React Docs](https://facebook.github.io/react/)
+  - [Props](https://facebook.github.io/react/docs/components-and-props.html)
+  - [Refs](https://facebook.github.io/react/docs/refs-and-the-dom.html)
+- [Stateless Functional Components](https://hackernoon.com/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc)
 
-## コントリビューション
+## Contributing
 
-何か問題点はありましたか？何か改善すべき点がありましたか？[私たちのカリキュラムに貢献しましょう](mailto:hello@codechrysalis.io)！
+Leave the below in the curriculum and delete this sentence.
+
+See a problem? Can something be done better? [Contribute to our curriculum](mailto:hello@codechrysalis.io)!
